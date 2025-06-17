@@ -1,0 +1,2161 @@
+
+Script settings:
+  Dataset directory: combined_dataset
+  Output directory: optuna_study_gat_ast
+  Epochs: 200
+  Folds: 3
+  Model type: gcn
+  Graph type: ast
+  Learning rate: 0.001
+  GNN Dropout rate: 0.5
+  Classifier Hidden Dim: (Optuna controlled)
+  Classifier Layers: (Optuna controlled)
+  Classifier Dropout: (Optuna controlled)
+  Optuna Trials: 5
+
+Loading and processing dataset...
+Processing TjIn samples...
+  Parsing RS232-T800... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: lor
+29: case
+30: pointer
+31: nonblocking
+32: plus
+33: partselect
+34: eq
+35: and
+Done
+  Parsing AES-T400... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: ioport
+18: reg
+19: senslist
+20: block
+21: sens
+22: nonblocking
+23: lvalue
+24: rvalue
+25: or
+26: if
+27: eq
+28: land
+29: xor
+30: assign
+31: lconcat
+32: concat
+33: partselect
+34: case
+Done
+  Parsing PIC16F84-T100... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: port
+9: parameter
+10: rvalue
+11: intconst
+12: input
+13: width
+14: output
+15: reg
+16: dimensions
+17: length
+18: minus
+19: identifier
+20: wire
+21: senslist
+22: block
+23: sens
+24: nonblocking
+25: if
+26: lvalue
+27: pointer
+28: lor
+29: unot
+30: eq
+31: partselect
+32: cond
+33: concat
+34: greaterthan
+35: sll
+36: case
+37: and
+38: plus
+39: lconcat
+40: land
+41: uminus
+42: or
+43: xor
+44: greatereq
+Done
+  Parsing AES-T2100... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: always
+16: assign
+17: ioport
+18: reg
+19: wire
+20: senslist
+21: block
+22: sens
+23: if
+24: eq
+25: nonblocking
+26: lvalue
+27: rvalue
+28: plus
+29: pointer
+30: srl
+31: unot
+32: xor
+33: lconcat
+34: concat
+35: partselect
+36: case
+Done
+  Parsing AES-T1500... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: and
+25: xor
+26: pointer
+27: if
+28: eq
+29: stringconst
+30: concat
+31: partselect
+32: plus
+33: assign
+34: port
+35: lconcat
+36: case
+Done
+  Parsing wb_conmax-T300... Skipping (known include dependencies)
+Skipped (parse error)
+  Parsing AES-T1800... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: always
+16: ioport
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: concat
+27: pointer
+28: partselect
+29: wire
+30: xor
+31: assign
+32: lconcat
+33: case
+Done
+  Parsing AES-T100... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: instancelist
+6: ioport
+7: input
+8: width
+9: intconst
+10: output
+11: instance
+12: portarg
+13: identifier
+14: decl
+15: always
+16: reg
+17: wire
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: pointer
+25: xor
+26: port
+27: assign
+28: lconcat
+29: concat
+30: partselect
+31: case
+Done
+  Parsing AES-T200... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: instancelist
+6: ioport
+7: input
+8: width
+9: intconst
+10: output
+11: instance
+12: portarg
+13: identifier
+14: decl
+15: always
+16: reg
+17: wire
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: pointer
+25: xor
+26: port
+27: assign
+28: lconcat
+29: concat
+30: partselect
+31: case
+Done
+  Parsing wb_conmax-T200... Skipping (known include dependencies)
+Skipped (parse error)
+  Parsing AES-T1700... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: ioport
+18: reg
+19: senslist
+20: block
+21: sens
+22: if
+23: eq
+24: nonblocking
+25: lvalue
+26: rvalue
+27: plus
+28: xor
+29: assign
+30: lconcat
+31: concat
+32: partselect
+33: case
+Done
+  Parsing RS232-T300... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: nonblocking
+29: plus
+30: partselect
+31: pointer
+32: case
+33: eq
+34: lor
+Done
+  Parsing AES-T1200... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: pointer
+25: xor
+26: if
+27: eq
+28: plus
+29: port
+30: assign
+31: lconcat
+32: concat
+33: partselect
+34: case
+Done
+  Parsing PIC16F84-T400... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: port
+9: parameter
+10: rvalue
+11: intconst
+12: input
+13: width
+14: output
+15: reg
+16: dimensions
+17: length
+18: minus
+19: identifier
+20: wire
+21: senslist
+22: block
+23: sens
+24: nonblocking
+25: if
+26: lvalue
+27: pointer
+28: lor
+29: unot
+30: eq
+31: partselect
+32: cond
+33: concat
+34: greaterthan
+35: sll
+36: case
+37: and
+38: plus
+39: lconcat
+40: land
+41: uminus
+42: or
+43: xor
+44: greatereq
+Done
+  Parsing RS232-T900... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: nonblocking
+29: plus
+30: partselect
+31: pointer
+32: case
+33: eq
+34: lor
+Done
+  Parsing PIC16F84-T200... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: port
+9: parameter
+10: rvalue
+11: intconst
+12: input
+13: width
+14: output
+15: reg
+16: dimensions
+17: length
+18: minus
+19: identifier
+20: wire
+21: senslist
+22: block
+23: sens
+24: nonblocking
+25: if
+26: lvalue
+27: pointer
+28: lor
+29: unot
+30: eq
+31: partselect
+32: cond
+33: concat
+34: greaterthan
+35: sll
+36: case
+37: and
+38: plus
+39: lconcat
+40: land
+41: uminus
+42: or
+43: xor
+44: greatereq
+Done
+  Parsing RS232-T100... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: assign
+7: instancelist
+8: always
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: lvalue
+17: rvalue
+18: identifier
+19: instance
+20: portarg
+21: senslist
+22: block
+23: sens
+24: if
+25: unot
+26: blocking
+27: cond
+28: parameter
+29: and
+30: pointer
+31: nonblocking
+32: plus
+33: partselect
+34: case
+35: eq
+Done
+  Parsing RS232-T700... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: lor
+29: case
+30: pointer
+31: nonblocking
+32: plus
+33: partselect
+34: eq
+Done
+  Parsing AES-T1900... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: always
+16: ioport
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: concat
+27: pointer
+28: partselect
+29: plus
+30: wire
+31: xor
+32: assign
+33: lconcat
+34: case
+Done
+  Parsing RS232-T500... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: nonblocking
+29: plus
+30: partselect
+31: pointer
+32: case
+33: eq
+34: lor
+Done
+  Parsing AES-T1600... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: ioport
+18: reg
+19: senslist
+20: block
+21: sens
+22: nonblocking
+23: lvalue
+24: rvalue
+25: or
+26: if
+27: eq
+28: land
+29: and
+30: xor
+31: assign
+32: lconcat
+33: concat
+34: partselect
+35: case
+Done
+  Parsing RS232-T200... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: case
+29: pointer
+30: nonblocking
+31: plus
+32: partselect
+33: eq
+34: and
+Done
+  Parsing AES-T700... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: pointer
+27: xor
+28: port
+29: assign
+30: lconcat
+31: concat
+32: partselect
+33: case
+Done
+  Parsing AES-T1400... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: and
+25: xor
+26: pointer
+27: if
+28: eq
+29: stringconst
+30: concat
+31: partselect
+32: land
+33: assign
+34: port
+35: lconcat
+36: case
+Done
+  Parsing PIC16F84-T300... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: port
+9: parameter
+10: rvalue
+11: intconst
+12: input
+13: width
+14: output
+15: reg
+16: dimensions
+17: length
+18: minus
+19: identifier
+20: wire
+21: senslist
+22: block
+23: sens
+24: nonblocking
+25: if
+26: lvalue
+27: pointer
+28: lor
+29: unot
+30: eq
+31: partselect
+32: cond
+33: concat
+34: greaterthan
+35: sll
+36: case
+37: and
+38: plus
+39: lconcat
+40: land
+41: uminus
+42: or
+43: xor
+44: greatereq
+Done
+  Parsing RS232-T901... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: nonblocking
+29: plus
+30: partselect
+31: pointer
+32: case
+33: eq
+34: lor
+Done
+  Parsing AES-T800... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: pointer
+27: xor
+28: land
+29: and
+30: port
+31: assign
+32: lconcat
+33: concat
+34: partselect
+35: case
+Done
+  Parsing AES-T600... Skipping (parse error:  line:3: before: "/")
+Skipped (parse error)
+  Parsing AES-T500... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: always
+16: ioport
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: concat
+27: pointer
+28: partselect
+29: land
+30: and
+31: wire
+32: xor
+33: assign
+34: lconcat
+35: case
+Done
+  Parsing AES-T1300... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: and
+25: xor
+26: pointer
+27: if
+28: eq
+29: stringconst
+30: concat
+31: partselect
+32: assign
+33: port
+34: lconcat
+35: case
+Done
+  Parsing AES-T300... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: xor
+25: and
+26: pointer
+27: if
+28: eq
+29: stringconst
+30: concat
+31: partselect
+32: assign
+33: port
+34: lconcat
+35: case
+Done
+  Parsing AES-T2000... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: always
+16: assign
+17: ioport
+18: reg
+19: wire
+20: senslist
+21: block
+22: sens
+23: if
+24: eq
+25: nonblocking
+26: lvalue
+27: rvalue
+28: plus
+29: pointer
+30: srl
+31: unot
+32: land
+33: and
+34: xor
+35: lconcat
+36: concat
+37: partselect
+38: case
+Done
+  Parsing AES-T1100... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: pointer
+25: xor
+26: if
+27: eq
+28: land
+29: and
+30: port
+31: assign
+32: lconcat
+33: concat
+34: partselect
+35: case
+Done
+  Parsing RS232-T400... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: nonblocking
+29: eq
+30: concat
+31: partselect
+32: lor
+33: plus
+34: pointer
+35: case
+Done
+  Parsing AES-T1000... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: nonblocking
+22: lvalue
+23: rvalue
+24: pointer
+25: xor
+26: if
+27: eq
+28: port
+29: assign
+30: lconcat
+31: concat
+32: partselect
+33: case
+Done
+  Parsing RS232-T600... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: lor
+29: case
+30: pointer
+31: nonblocking
+32: plus
+33: partselect
+34: eq
+Done
+  Parsing AES-T900... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: always
+17: reg
+18: senslist
+19: block
+20: sens
+21: if
+22: eq
+23: nonblocking
+24: lvalue
+25: rvalue
+26: pointer
+27: xor
+28: plus
+29: port
+30: assign
+31: lconcat
+32: concat
+33: partselect
+34: case
+Done
+Processing TjFree samples...
+  Parsing vga... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: ioport
+9: input
+10: output
+11: reg
+12: width
+13: intconst
+14: wire
+15: lvalue
+16: rvalue
+17: identifier
+18: eq
+19: senslist
+20: if
+21: sens
+22: nonblocking
+23: plus
+24: block
+25: land
+26: greaterthan
+27: lessthan
+28: unot
+Done
+  Parsing RC6... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: minus
+14: times
+15: instance
+16: portarg
+17: identifier
+18: function
+19: assign
+20: always
+21: localparam
+22: rvalue
+23: concat
+24: reg
+25: block
+26: blocking
+27: lvalue
+28: partselect
+29: functioncall
+30: senslist
+31: sens
+32: if
+33: nonblocking
+34: delay
+35: cond
+36: plus
+37: eq
+38: noteq
+39: lor
+40: and
+41: unot
+42: xor
+43: case
+44: pointer
+Done
+  Parsing RS232... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: always
+8: assign
+9: port
+10: input
+11: output
+12: width
+13: intconst
+14: reg
+15: wire
+16: instance
+17: portarg
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: unot
+24: blocking
+25: lvalue
+26: rvalue
+27: cond
+28: parameter
+29: nonblocking
+30: plus
+31: partselect
+32: pointer
+33: case
+34: eq
+Done
+  Parsing syncRAM... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: port
+8: parameter
+9: rvalue
+10: intconst
+11: input
+12: width
+13: minus
+14: identifier
+15: output
+16: reg
+17: dimensions
+18: length
+19: senslist
+20: block
+21: sens
+22: if
+23: eq
+24: event
+25: land
+26: blocking
+27: lvalue
+28: pointer
+Done
+  Parsing PIC16F84... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: always
+7: assign
+8: port
+9: parameter
+10: rvalue
+11: intconst
+12: input
+13: width
+14: output
+15: reg
+16: dimensions
+17: length
+18: minus
+19: identifier
+20: wire
+21: senslist
+22: block
+23: sens
+24: nonblocking
+25: if
+26: lvalue
+27: pointer
+28: lor
+29: unot
+30: eq
+31: partselect
+32: cond
+33: concat
+34: greaterthan
+35: sll
+36: case
+37: and
+38: plus
+39: lconcat
+40: land
+41: uminus
+42: or
+43: xor
+44: greatereq
+Done
+  Parsing det_1011... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: assign
+7: always
+8: ioport
+9: input
+10: output
+11: parameter
+12: rvalue
+13: intconst
+14: reg
+15: width
+16: lvalue
+17: identifier
+18: cond
+19: eq
+20: senslist
+21: block
+22: sens
+23: if
+24: ulnot
+25: nonblocking
+26: case
+27: blocking
+Done
+  Parsing spi_master... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: assign
+7: always
+8: ioport
+9: input
+10: wire
+11: width
+12: intconst
+13: output
+14: reg
+15: inout
+16: lvalue
+17: rvalue
+18: identifier
+19: senslist
+20: block
+21: sens
+22: if
+23: nonblocking
+24: pointer
+25: sll
+26: lor
+27: blocking
+28: land
+29: case
+30: concat
+31: ulnot
+32: plus
+33: greatereq
+34: eq
+35: mod
+36: greaterthan
+37: lessthan
+38: unot
+Done
+  Parsing RC5... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: port
+8: input
+9: width
+10: intconst
+11: output
+12: instance
+13: portarg
+14: identifier
+15: ioport
+16: wire
+17: minus
+18: times
+19: function
+20: always
+21: assign
+22: localparam
+23: rvalue
+24: reg
+25: block
+26: blocking
+27: lvalue
+28: concat
+29: partselect
+30: senslist
+31: sens
+32: if
+33: nonblocking
+34: delay
+35: eq
+36: noteq
+37: plus
+38: cond
+39: functioncall
+40: xor
+41: lor
+42: and
+43: unot
+44: case
+45: pointer
+Done
+  Parsing xtea... 
+Generated AST Type Dictionary:
+0: source
+1: description
+2: moduledef
+3: paramlist
+4: portlist
+5: decl
+6: instancelist
+7: ioport
+8: input
+9: width
+10: intconst
+11: output
+12: wire
+13: instance
+14: portarg
+15: identifier
+16: function
+17: assign
+18: always
+19: localparam
+20: rvalue
+21: reg
+22: block
+23: blocking
+24: lvalue
+25: cond
+26: eq
+27: partselect
+28: plus
+29: functioncall
+30: senslist
+31: sens
+32: if
+33: nonblocking
+34: delay
+35: concat
+36: noteq
+37: lor
+38: and
+39: unot
+40: case
+41: minus
+42: times
+43: xor
+Done
+Dataset loading and processing took 21.02 seconds.
+Time per graph for loading/processing: 0.4888 seconds.
+
+--- Starting Trial (Optuna trial: 0) ---
+Parameters for this trial: {'classifier_hidden_dim': 20, 'classifier_layers': 4, 'classifier_dropout_rate': 0.6932743748028691, 'gnn_dropout': 0.5477086677759001, 'lr': 0.004013850243258179}
+
+--- Fold 1/3 (Trial: 0) ---
+Epoch 10/200, Loss: 0.1756
+Epoch 20/200, Loss: 0.1846
+Epoch 30/200, Loss: 0.1815
+Epoch 40/200, Loss: 0.1729
+Epoch 50/200, Loss: 0.1639
+Epoch 60/200, Loss: 0.1642
+Epoch 70/200, Loss: 0.1718
+Epoch 80/200, Loss: 0.1725
+Epoch 90/200, Loss: 0.1561
+Epoch 100/200, Loss: 0.1584
+Epoch 110/200, Loss: 0.1442
+Epoch 120/200, Loss: 0.1568
+Epoch 130/200, Loss: 0.1691
+Epoch 140/200, Loss: 0.1448
+Epoch 150/200, Loss: 0.1715
+Epoch 160/200, Loss: 0.1482
+Epoch 170/200, Loss: 0.1519
+Epoch 180/200, Loss: 0.1675
+Epoch 190/200, Loss: 0.1562
+Epoch 200/200, Loss: 0.1523
+Fold Metrics: Test Loss: 0.1313, Accuracy: 0.6667, Precision: 0.8889, Recall: 0.6667, F1: 0.7619, Train Acc: 0.8636
+Fold Training Time: 18.92s (0.4300s/sample)
+Fold Evaluation Time: 0.02s (0.0014s/sample)
+
+--- Fold 2/3 (Trial: 0) ---
+Epoch 10/200, Loss: 0.1935
+Epoch 20/200, Loss: 0.1723
+Epoch 30/200, Loss: 0.1623
+Epoch 40/200, Loss: 0.1750
+Epoch 50/200, Loss: 0.1712
+Epoch 60/200, Loss: 0.1515
+Epoch 70/200, Loss: 0.1946
+Epoch 80/200, Loss: 0.1551
+Epoch 90/200, Loss: 0.1374
+Epoch 100/200, Loss: 0.1558
+Epoch 110/200, Loss: 0.1449
+Epoch 120/200, Loss: 0.1335
+Epoch 130/200, Loss: 0.1389
+Epoch 140/200, Loss: 0.1401
+Epoch 150/200, Loss: 0.1217
+Epoch 160/200, Loss: 0.0965
+Epoch 170/200, Loss: 0.0878
+Epoch 180/200, Loss: 0.1286
+Epoch 190/200, Loss: 0.1167
+Epoch 200/200, Loss: 0.0991
+Fold Metrics: Test Loss: 0.0859, Accuracy: 0.8571, Precision: 0.9091, Recall: 0.9091, F1: 0.9091, Train Acc: 0.9130
+Fold Training Time: 21.72s (0.4722s/sample)
+Fold Evaluation Time: 0.02s (0.0011s/sample)
+
+--- Fold 3/3 (Trial: 0) ---
+Epoch 10/200, Loss: 0.1706
+Epoch 20/200, Loss: 0.1941
+Epoch 30/200, Loss: 0.1692
+Epoch 40/200, Loss: 0.1706
+Epoch 50/200, Loss: 0.1655
+Epoch 60/200, Loss: 0.1470
+Epoch 70/200, Loss: 0.1591
+Epoch 80/200, Loss: 0.1571
+Epoch 90/200, Loss: 0.1819
+Epoch 100/200, Loss: 0.1518
+Epoch 110/200, Loss: 0.1466
+Epoch 120/200, Loss: 0.1596
+Epoch 130/200, Loss: 0.1451
+Epoch 140/200, Loss: 0.1380
+Epoch 150/200, Loss: 0.1480
+Epoch 160/200, Loss: 0.1404
+Epoch 170/200, Loss: 0.1406
+Epoch 180/200, Loss: 0.1362
+Epoch 190/200, Loss: 0.1351
+Epoch 200/200, Loss: 0.1311
+Fold Metrics: Test Loss: 0.0980, Accuracy: 0.7143, Precision: 1.0000, Recall: 0.6364, F1: 0.7778, Train Acc: 0.7826
+Fold Training Time: 25.58s (0.5560s/sample)
+Fold Evaluation Time: 0.02s (0.0012s/sample)
+
+--- Trial Summary (Optuna trial: 0) ---
+Average Test Accuracy: 0.7460
+Average Train Accuracy: 0.8531
+Average F1 Score: 0.8163
+
+--- Starting Trial (Optuna trial: 1) ---
+Parameters for this trial: {'classifier_hidden_dim': 95, 'classifier_layers': 1, 'classifier_dropout_rate': 0.5642893790279825, 'gnn_dropout': 0.5165212204038991, 'lr': 0.0003217432973759512}
+
+--- Fold 1/3 (Trial: 1) ---
+Epoch 10/200, Loss: 0.1702
+Epoch 20/200, Loss: 0.1421
+Epoch 30/200, Loss: 0.1195
+Epoch 40/200, Loss: 0.1068
+Epoch 50/200, Loss: 0.0996
+Epoch 60/200, Loss: 0.0965
+Epoch 70/200, Loss: 0.0935
+Epoch 80/200, Loss: 0.0907
+Epoch 90/200, Loss: 0.0910
+Epoch 100/200, Loss: 0.0874
+Epoch 110/200, Loss: 0.0874
+Epoch 120/200, Loss: 0.0885
+Epoch 130/200, Loss: 0.0864
+Epoch 140/200, Loss: 0.0849
+Epoch 150/200, Loss: 0.0838
+Epoch 160/200, Loss: 0.0833
+Epoch 170/200, Loss: 0.0821
+Epoch 180/200, Loss: 0.0816
+Epoch 190/200, Loss: 0.0820
+Epoch 200/200, Loss: 0.0805
+Fold Metrics: Test Loss: 0.2155, Accuracy: 0.6667, Precision: 0.8889, Recall: 0.6667, F1: 0.7619, Train Acc: 0.8636
+Fold Training Time: 17.72s (0.4028s/sample)
+Fold Evaluation Time: 0.02s (0.0013s/sample)
+
+--- Fold 2/3 (Trial: 1) ---
+Epoch 10/200, Loss: 0.1405
+Epoch 20/200, Loss: 0.1188
+Epoch 30/200, Loss: 0.1067
+Epoch 40/200, Loss: 0.1022
+Epoch 50/200, Loss: 0.0990
+Epoch 60/200, Loss: 0.0954
+Epoch 70/200, Loss: 0.0940
+Epoch 80/200, Loss: 0.0953
+Epoch 90/200, Loss: 0.0920
+Epoch 100/200, Loss: 0.0907
+Epoch 110/200, Loss: 0.0911
+Epoch 120/200, Loss: 0.0867
+Epoch 130/200, Loss: 0.0836
+Epoch 140/200, Loss: 0.0829
+Epoch 150/200, Loss: 0.0800
+Epoch 160/200, Loss: 0.0785
+Epoch 170/200, Loss: 0.0742
+Epoch 180/200, Loss: 0.0711
+Epoch 190/200, Loss: 0.0691
+Epoch 200/200, Loss: 0.0622
+Fold Metrics: Test Loss: 0.1169, Accuracy: 0.7143, Precision: 1.0000, Recall: 0.6364, F1: 0.7778, Train Acc: 0.8478
+Fold Training Time: 19.10s (0.4153s/sample)
+Fold Evaluation Time: 0.02s (0.0011s/sample)
+
+--- Fold 3/3 (Trial: 1) ---
+Epoch 10/200, Loss: 0.1699
+Epoch 20/200, Loss: 0.1590
+Epoch 30/200, Loss: 0.1433
+Epoch 40/200, Loss: 0.1445
+Epoch 50/200, Loss: 0.1372
+Epoch 60/200, Loss: 0.1363
+Epoch 70/200, Loss: 0.1327
+Epoch 80/200, Loss: 0.1299
+Epoch 90/200, Loss: 0.1276
+Epoch 100/200, Loss: 0.1220
+Epoch 110/200, Loss: 0.1218
+Epoch 120/200, Loss: 0.1201
+Epoch 130/200, Loss: 0.1210
+Epoch 140/200, Loss: 0.1165
+Epoch 150/200, Loss: 0.1143
+Epoch 160/200, Loss: 0.1080
+Epoch 170/200, Loss: 0.1066
+Epoch 180/200, Loss: 0.1075
+Epoch 190/200, Loss: 0.1039
+Epoch 200/200, Loss: 0.0986
+Fold Metrics: Test Loss: 0.0915, Accuracy: 0.7143, Precision: 1.0000, Recall: 0.6364, F1: 0.7778, Train Acc: 0.7826
+Fold Training Time: 23.35s (0.5076s/sample)
+Fold Evaluation Time: 0.02s (0.0012s/sample)
+
+--- Trial Summary (Optuna trial: 1) ---
+Average Test Accuracy: 0.6984
+Average Train Accuracy: 0.8314
+Average F1 Score: 0.7725
+
+--- Starting Trial (Optuna trial: 2) ---
+Parameters for this trial: {'classifier_hidden_dim': 124, 'classifier_layers': 2, 'classifier_dropout_rate': 0.5787816027818316, 'gnn_dropout': 0.5118365606730494, 'lr': 0.00017024918040009726}
+
+--- Fold 1/3 (Trial: 2) ---
+Epoch 10/200, Loss: 0.1805
+Epoch 20/200, Loss: 0.1700
+Epoch 30/200, Loss: 0.1617
+Epoch 40/200, Loss: 0.1407
+Epoch 50/200, Loss: 0.1319
+Epoch 60/200, Loss: 0.1266
+Epoch 70/200, Loss: 0.1206
+Epoch 80/200, Loss: 0.1084
+Epoch 90/200, Loss: 0.1085
+Epoch 100/200, Loss: 0.0986
+Epoch 110/200, Loss: 0.1017
+Epoch 120/200, Loss: 0.1069
+Epoch 130/200, Loss: 0.0998
+Epoch 140/200, Loss: 0.0958
+Epoch 150/200, Loss: 0.0960
+Epoch 160/200, Loss: 0.0858
+Epoch 170/200, Loss: 0.0980
+Epoch 180/200, Loss: 0.0965
+Epoch 190/200, Loss: 0.1017
+Epoch 200/200, Loss: 0.0944
+Fold Metrics: Test Loss: 0.1878, Accuracy: 0.6667, Precision: 0.8889, Recall: 0.6667, F1: 0.7619, Train Acc: 0.8636
+Fold Training Time: 18.63s (0.4233s/sample)
+Fold Evaluation Time: 0.02s (0.0012s/sample)
+
+--- Fold 2/3 (Trial: 2) ---
+Epoch 10/200, Loss: 0.1814
+Epoch 20/200, Loss: 0.1760
+Epoch 30/200, Loss: 0.1679
+Epoch 40/200, Loss: 0.1541
+Epoch 50/200, Loss: 0.1495
+Epoch 60/200, Loss: 0.1562
+Epoch 70/200, Loss: 0.1385
+Epoch 80/200, Loss: 0.1424
+Epoch 90/200, Loss: 0.1491
+Epoch 100/200, Loss: 0.1338
+Epoch 110/200, Loss: 0.1350
+Epoch 120/200, Loss: 0.1449
+Epoch 130/200, Loss: 0.1346
+Epoch 140/200, Loss: 0.1439
+Epoch 150/200, Loss: 0.1217
+Epoch 160/200, Loss: 0.1249
+Epoch 170/200, Loss: 0.1355
+Epoch 180/200, Loss: 0.1305
+Epoch 190/200, Loss: 0.1283
+Epoch 200/200, Loss: 0.1126
+Fold Metrics: Test Loss: 0.1541, Accuracy: 0.7143, Precision: 1.0000, Recall: 0.6364, F1: 0.7778, Train Acc: 0.7609
+Fold Training Time: 22.97s (0.4993s/sample)
+Fold Evaluation Time: 0.02s (0.0013s/sample)
+
+--- Fold 3/3 (Trial: 2) ---
+Epoch 10/200, Loss: 0.1693
+Epoch 20/200, Loss: 0.1650
+Epoch 30/200, Loss: 0.1716
+Epoch 40/200, Loss: 0.1482
+Epoch 50/200, Loss: 0.1457
+Epoch 60/200, Loss: 0.1576
+Epoch 70/200, Loss: 0.1461
+Epoch 80/200, Loss: 0.1490
+Epoch 90/200, Loss: 0.1513
+Epoch 100/200, Loss: 0.1519
+Epoch 110/200, Loss: 0.1385
+Epoch 120/200, Loss: 0.1364
+Epoch 130/200, Loss: 0.1319
+Epoch 140/200, Loss: 0.1370
+Epoch 150/200, Loss: 0.1447
+Epoch 160/200, Loss: 0.1303
+Epoch 170/200, Loss: 0.1355
+Epoch 180/200, Loss: 0.1376
+Epoch 190/200, Loss: 0.1327
+Epoch 200/200, Loss: 0.1391
+Fold Metrics: Test Loss: 0.1072, Accuracy: 0.8571, Precision: 1.0000, Recall: 0.8182, F1: 0.9000, Train Acc: 0.7391
+Fold Training Time: 23.25s (0.5055s/sample)
+Fold Evaluation Time: 0.02s (0.0014s/sample)
+
+--- Trial Summary (Optuna trial: 2) ---
+Average Test Accuracy: 0.7460
+Average Train Accuracy: 0.7879
+Average F1 Score: 0.8132
+
+--- Starting Trial (Optuna trial: 3) ---
+Parameters for this trial: {'classifier_hidden_dim': 32, 'classifier_layers': 4, 'classifier_dropout_rate': 0.217052023813549, 'gnn_dropout': 0.6211861174086543, 'lr': 0.003447510318746691}
+
+--- Fold 1/3 (Trial: 3) ---
+Epoch 10/200, Loss: 0.1074
+Epoch 20/200, Loss: 0.1020
+Epoch 30/200, Loss: 0.0850
+Epoch 40/200, Loss: 0.0827
+Epoch 50/200, Loss: 0.0740
+Epoch 60/200, Loss: 0.0770
+Epoch 70/200, Loss: 0.0387
+Epoch 80/200, Loss: 0.0461
+Epoch 90/200, Loss: 0.0397
+Epoch 100/200, Loss: 0.0342
+Epoch 110/200, Loss: 0.0288
+Epoch 120/200, Loss: 0.0352
+Epoch 130/200, Loss: 0.0385
+Epoch 140/200, Loss: 0.0414
+Epoch 150/200, Loss: 0.0347
+Epoch 160/200, Loss: 0.0167
+Epoch 170/200, Loss: 0.0520
+Epoch 180/200, Loss: 0.0241
+Epoch 190/200, Loss: 0.0065
+Epoch 200/200, Loss: 0.0351
+Fold Metrics: Test Loss: 1.7662, Accuracy: 0.9333, Precision: 0.9231, Recall: 1.0000, F1: 0.9600, Train Acc: 0.9318
+Fold Training Time: 19.25s (0.4375s/sample)
+Fold Evaluation Time: 0.02s (0.0014s/sample)
+
+--- Fold 2/3 (Trial: 3) ---
+Epoch 10/200, Loss: 0.1311
+Epoch 20/200, Loss: 0.1128
+Epoch 30/200, Loss: 0.1041
+Epoch 40/200, Loss: 0.0801
+Epoch 50/200, Loss: 0.0745
+Epoch 60/200, Loss: 0.0582
+Epoch 70/200, Loss: 0.0543
+Epoch 80/200, Loss: 0.0429
+Epoch 90/200, Loss: 0.0451
+Epoch 100/200, Loss: 0.0275
+Epoch 110/200, Loss: 0.0418
+Epoch 120/200, Loss: 0.0409
+Epoch 130/200, Loss: 0.0429
+Epoch 140/200, Loss: 0.0234
+Epoch 150/200, Loss: 0.0277
+Epoch 160/200, Loss: 0.0308
+Epoch 170/200, Loss: 0.0323
+Epoch 180/200, Loss: 0.0267
+Epoch 190/200, Loss: 0.0275
+Epoch 200/200, Loss: 0.0240
+Fold Metrics: Test Loss: 0.3185, Accuracy: 0.7143, Precision: 0.7692, Recall: 0.9091, F1: 0.8333, Train Acc: 0.9348
+Fold Training Time: 20.40s (0.4436s/sample)
+Fold Evaluation Time: 0.02s (0.0011s/sample)
+
+--- Fold 3/3 (Trial: 3) ---
+Epoch 10/200, Loss: 0.1297
+Epoch 20/200, Loss: 0.1222
+Epoch 30/200, Loss: 0.1257
+Epoch 40/200, Loss: 0.1363
+Epoch 50/200, Loss: 0.1119
+Epoch 60/200, Loss: 0.1088
+Epoch 70/200, Loss: 0.1122
+Epoch 80/200, Loss: 0.1149
+Epoch 90/200, Loss: 0.1093
+Epoch 100/200, Loss: 0.0855
+Epoch 110/200, Loss: 0.0771
+Epoch 120/200, Loss: 0.0738
+Epoch 130/200, Loss: 0.0678
+Epoch 140/200, Loss: 0.0891
+Epoch 150/200, Loss: 0.0875
+Epoch 160/200, Loss: 0.0751
+Epoch 170/200, Loss: 0.0703
+Epoch 180/200, Loss: 0.0668
+Epoch 190/200, Loss: 0.0778
+Epoch 200/200, Loss: 0.0781
+Fold Metrics: Test Loss: 0.0281, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000, Train Acc: 0.8261
+Fold Training Time: 21.95s (0.4772s/sample)
+Fold Evaluation Time: 0.02s (0.0014s/sample)
+
+--- Trial Summary (Optuna trial: 3) ---
+Average Test Accuracy: 0.8825
+Average Train Accuracy: 0.8976
+Average F1 Score: 0.9311
+
+--- Starting Trial (Optuna trial: 4) ---
+Parameters for this trial: {'classifier_hidden_dim': 46, 'classifier_layers': 3, 'classifier_dropout_rate': 0.6339922061091593, 'gnn_dropout': 0.5562753326106092, 'lr': 2.3182084438411625e-05}
+
+--- Fold 1/3 (Trial: 4) ---
+Epoch 10/200, Loss: 0.1898
+Epoch 20/200, Loss: 0.1892
+Epoch 30/200, Loss: 0.1870
+Epoch 40/200, Loss: 0.1823
+Epoch 50/200, Loss: 0.1782
+Epoch 60/200, Loss: 0.1919
+Epoch 70/200, Loss: 0.1793
+Epoch 80/200, Loss: 0.1752
+Epoch 90/200, Loss: 0.1695
+Epoch 100/200, Loss: 0.1774
+Epoch 110/200, Loss: 0.1738
+Epoch 120/200, Loss: 0.1805
+Epoch 130/200, Loss: 0.1718
+Epoch 140/200, Loss: 0.1761
+Epoch 150/200, Loss: 0.1737
+Epoch 160/200, Loss: 0.1886
+Epoch 170/200, Loss: 0.1721
+Epoch 180/200, Loss: 0.1664
+Epoch 190/200, Loss: 0.1738
+Epoch 200/200, Loss: 0.1732
+Fold Metrics: Test Loss: 0.1609, Accuracy: 0.6667, Precision: 0.8889, Recall: 0.6667, F1: 0.7619, Train Acc: 0.8636
+Fold Training Time: 22.85s (0.5193s/sample)
+Fold Evaluation Time: 0.02s (0.0015s/sample)
+
+--- Fold 2/3 (Trial: 4) ---
+Epoch 10/200, Loss: 0.1750
+Epoch 20/200, Loss: 0.1782
+Epoch 30/200, Loss: 0.1906
+Epoch 40/200, Loss: 0.1894
+Epoch 50/200, Loss: 0.1857
+Epoch 60/200, Loss: 0.1710
+Epoch 70/200, Loss: 0.1857
+Epoch 80/200, Loss: 0.1771
+Epoch 90/200, Loss: 0.1934
+Epoch 100/200, Loss: 0.1697
+Epoch 110/200, Loss: 0.1828
+Epoch 120/200, Loss: 0.1720
+Epoch 130/200, Loss: 0.1760
+Epoch 140/200, Loss: 0.1734
+Epoch 150/200, Loss: 0.1765
+Epoch 160/200, Loss: 0.1755
+Epoch 170/200, Loss: 0.1822
+Epoch 180/200, Loss: 0.1662
+Epoch 190/200, Loss: 0.1770
+Epoch 200/200, Loss: 0.1816
+Fold Metrics: Test Loss: 0.1637, Accuracy: 0.5714, Precision: 0.7778, Recall: 0.6364, F1: 0.7000, Train Acc: 0.8043
+Fold Training Time: 23.34s (0.5073s/sample)
+Fold Evaluation Time: 0.02s (0.0013s/sample)
+
+--- Fold 3/3 (Trial: 4) ---
+Epoch 10/200, Loss: 0.1821
+Epoch 20/200, Loss: 0.1850
+Epoch 30/200, Loss: 0.1874
+Epoch 40/200, Loss: 0.1758
+Epoch 50/200, Loss: 0.1859
+Epoch 60/200, Loss: 0.1790
+Epoch 70/200, Loss: 0.1823
+Epoch 80/200, Loss: 0.1780
+Epoch 90/200, Loss: 0.1718
+Epoch 100/200, Loss: 0.1803
+Epoch 110/200, Loss: 0.1789
+Epoch 120/200, Loss: 0.1765
+Epoch 130/200, Loss: 0.1725
+Epoch 140/200, Loss: 0.1721
+Epoch 150/200, Loss: 0.1738
+Epoch 160/200, Loss: 0.1689
+Epoch 170/200, Loss: 0.1779
+Epoch 180/200, Loss: 0.1761
+Epoch 190/200, Loss: 0.1858
+Epoch 200/200, Loss: 0.1748
+Fold Metrics: Test Loss: 0.1569, Accuracy: 0.7857, Precision: 0.7857, Recall: 1.0000, F1: 0.8800, Train Acc: 0.5000
+Fold Training Time: 26.42s (0.5743s/sample)
+Fold Evaluation Time: 0.02s (0.0014s/sample)
+
+--- Trial Summary (Optuna trial: 4) ---
+Average Test Accuracy: 0.6746
+Average Train Accuracy: 0.7227
+Average F1 Score: 0.7806
+
+Optuna Hyperparameter Tuning Complete!
+Best trial:
+  Value (Maximized Metric): 0.9311111111111111
+  Best Hyperparameters: 
+    classifier_hidden_dim: 32
+    classifier_layers: 4
+    classifier_dropout_rate: 0.217052023813549
+    gnn_dropout: 0.6211861174086543
+    lr: 0.003447510318746691
+
+Total script execution time: 347.60 seconds.
